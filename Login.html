@@ -4,21 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blocs</title>
-    <style>
-        form{
-            display: flex !important;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-        }
-    </style>
 </head>
 <body>
+    <header >
+        <div class="nav_bar">
+            <div class="nav_logo"><img src="Logo.png"></div>
+            <div class="nav_menu">
+                <ul>
+                    <li><a href="">Log in</a></li>
+                    <li><a href="">Register</a></li>
+                    <li>
+                        <ul>
+                            <li>English</li>
+                            <li>Francais</li>
+                            <li>Arabic</li>
+                        </ul>
+                    </li>
+                    <li><button type="button">Dark/Light</button></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+
     <form action="index.html" method="post">
-    <h1>Login</h1>
-    <label>E-mail<input type="email" placeholder="email"></label>
-    <label>password<input type="password" placeholder="password"></label>
-    <button type="submit">Login</button>
+        <h1 class="form-title">Your account</h1>
+        <div class="form_login">
+            <div class="login_main_info">
+                <h2>Sign in</h2>
+                <label>E-mail<input type="email" placeholder="email"></label>
+                <label>password<input type="password" placeholder="password"></label>
+                <button type="submit">Login</button>
+            </div>
+            <div class="login_sub_info">
+                <div>
+                <p><a>Forgot password?</a></p>
+                </div>
+                <div>
+                    <h2>Not a member?</h2>
+                    <div><p>Register here</p></div>
+                </div>
+            </div>
+        </div>
     </form>
 </body>
 </html>
