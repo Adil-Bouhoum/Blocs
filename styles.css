@@ -4,6 +4,7 @@
     --third-purple: #bc43c1;
     --main-white: #d6d6d6;
     --main-blue: #457bc1;
+    --sub-blue:#7eadea;
     --main-dark:rgb(22,20,34);
  }
 
@@ -37,6 +38,10 @@
 
 a:hover{
     color:var(--main-blue);
+}
+
+a:active{
+    color: var(--sub-blue);
 }
 
 
