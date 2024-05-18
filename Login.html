@@ -2,57 +2,104 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blocs</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Blocs Login</title>
+    <link rel="stylesheet" href="index.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
+    <!-- NAVBAR CREATION -->
     <header>
         <div class="nav_bar">
-            <div class="nav_logo"><img src="Logo.png"></div>
+            <div class="nav_logo"><img src="Logo.png" alt="Logo"></div>
             <div class="nav_menu">
                 <ul>
-                    <li><a href="">Log in</a></li>
-                    <li><a href="">Register</a></li>
-                    <li >
+                    <li><a href="#">Log in</a></li>
+                    <li><a href="#">Register</a></li>
+                    <li>
                         <div class="dropdown_menu">
-                        <button class="dropbtn">Language</button>
-                        <div class="dropdown_content">
-                            <a>English</a>
-                            <a>Francais</a>
-                            <a>Arabic</a>
+                            <button class="dropbtn">Language</button>
+                            <div class="dropdown_content">
+                                <a href="#">English</a>
+                                <a href="#">Français</a>
+                                <a href="#">Arabic</a>
+                            </div>
                         </div>
-                        </div>
-                    </li>
+                    </li>   
                     <li><button type="button">Dark/Light</button></li>
                 </ul>
             </div>
         </div>
     </header>
-
-
-    <form action="index.html" method="post">
-        <div>
-        <h1 class="form-title">Your account</h1>
-        </div>
-        <div class="form_login">
-            <div class="login_main_info">
-                <h2>Sign in</h2>
-                <label>E-mail: <input type="email" placeholder="email" required></label>
-                <label>Password: <input type="password" placeholder="password" required></label>
-                <button type="submit">Login</button>
-                <p><a>Forgot password?</a></p>
-            </div>
-            <div class="login_sub_info">
-                
-               
-                
-                
-                    <h2>Not a member?</h2>
-                    <p><a href="Registe.html">Register here</a></p>
-                
+    <!-- LOGIN FORM CREATION -->
+    <div class="background"></div>
+    <div class="container">
+        <div class="item">
+            <h2 class="logo"><i class='bx bxl-xing'></i>Blocs</h2>
+            <div class="text-item">
+                <h2>Welcome! <br><span>To Your Bloc!</span></h2>
+                <p>Join the Community.</p>
+                <div class="social-icon">
+                    <a href="#"><i class='bx bxl-facebook'></i></a>
+                    <a href="#"><i class='bx bxl-twitter'></i></a>
+                    <a href="#"><i class='bx bxl-youtube'></i></a>
+                    <a href="#"><i class='bx bxl-instagram'></i></a>
+                    <a href="#"><i class='bx bxl-linkedin'></i></a>
+                </div>
             </div>
         </div>
-    </form>
+        <div class="login-section">
+            <div class="form-box login">
+                <form action="" onsubmit="handleLogin(event)">
+                    <h2>Sign In</h2>
+                    <div class="input-box">
+                        <span class="icon"><i class='bx bxs-envelope'></i></span>
+                        <input type="email" id="login-email" required>
+                        <label>Email</label>
+                    </div>
+                    <div class="input-box">
+                        <span class="icon"><i class='bx bxs-lock-alt'></i></span>
+                        <input type="password" id="login-password" required>
+                        <label>Password</label>
+                    </div>
+                    <div class="remember-password">
+                        <label><input type="checkbox">Remember Me</label>
+                        <a href="#">Forget Password</a>
+                    </div>
+                    <button class="btn" type="submit">Login In</button>
+                    <div class="create-account">
+                        <p>Create A New Account? <a href="#" class="register-link">Sign Up</a></p>
+                    </div>
+                </form>
+            </div>
+            <div class="form-box register">
+                <form action="" onsubmit="handleSignup(event)">
+                    <h2>Sign Up</h2>
+                    <div class="input-box">
+                        <span class="icon"><i class='bx bxs-user'></i></span>
+                        <input type="text" id="signup-username" required>
+                        <label>Username</label>
+                    </div>
+                    <div class="input-box">
+                        <span class="icon"><i class='bx bxs-envelope'></i></span>
+                        <input type="email" id="signup-email" required>
+                        <label>Email</label>
+                    </div>
+                    <div class="input-box">
+                        <span class="icon"><i class='bx bxs-lock-alt'></i></span>
+                        <input type="password" id="signup-password" required>
+                        <label>Password</label>
+                    </div>
+                    <div class="remember-password">
+                        <label><input type="checkbox">I agree with this statement</label>
+                    </div>
+                    <button class="btn" type="submit">Sign Up</button>
+                    <div class="create-account">
+                        <p>Already Have An Account? <a href="#" class="login-link">Sign In</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="index.js"></script>
 </body>
 </html>
