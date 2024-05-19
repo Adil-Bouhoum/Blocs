@@ -28,15 +28,15 @@
                         <div class="cat_container">
                         <div class="cat_container1">
                             <a href="Games-xbox.html">Xbox Games</a>
-                            <a href="Games-xbox.html">PC Games</a>
-                            <a href="Games-xbox.html">PlayStation Games</a>
-                            <a href="Games-xbox.html">Nintendo Games</a>
+                            <a href="Games-pc.html">PC Games</a>
+                            <a href="Games-ps.html">PlayStation Games</a>
+                            <a href="Games-nintendo.html">Nintendo Games</a>
                         </div>
                         <div class="cat_container2">
-                            <a href="Games-xbox.html">Singleplayer</a>
-                            <a href="Games-xbox.html">Multiplayer</a>
-                            <a href="Games-xbox.html">Action</a>
-                            <a href="Games-xbox.html">MMORPG</a>
+                            <a href="Games-solo.html">Singleplayer</a>
+                            <a href="Games-multi.html">Multiplayer</a>
+                            <a href="Games-action.html">Action</a>
+                            <a href="Games-MMORPG.html">MMORPG</a>
                         </div>
                         </div>
                     </div>
@@ -54,17 +54,16 @@
     <section class="packs-showcase">
         <section class="container">
             <div class="main_img">
-              <img id="mainImage" src="images/Dragonslegacy.jpg">
+              <img id="mainImage" src="images/xbox.jpg">
             </div>
             <div class="sec_container" onmouseleave="resetMainImage()">
-              <div class="title"><h2>DRAGON'    S LEGACY PACK</h2></div>
+              <div class="title"><h2>XBOX ZONE</h2></div>
               <div class="sub_img">
-                <img src="images/yakuza 0.jpg" onmouseover="changeMainImage('images/yakuza 0.jpg')" onmouseleave="resetMainImage()">
-                <img src="images/yakuza kiwami.jpg" onmouseover="changeMainImage('images/yakuza kiwami.jpg')" onmouseleave="resetMainImage()">
-                <img src="images/like a dragon.jpg" onmouseover="changeMainImage('images/like a dragon.jpg')" onmouseleave="resetMainImage()">
-                <img src="images/yakuza 5.jpg" onmouseover="changeMainImage('images/yakuza 5.jpg')" onmouseleave="resetMainImage()">
+                <img src="images/halo.jpg" onmouseover="changeMainImage('images/halo.jpg')" onmouseleave="resetMainImage()">
+                <img src="images/ori.jpeg" onmouseover="changeMainImage('images/ori.jpeg')" onmouseleave="resetMainImage()">
+                <img src="images/starfield.jpeg" onmouseover="changeMainImage('images/starfield.jpeg')" onmouseleave="resetMainImage()">
+                <img src="images/SeaofThieves.jpeg" onmouseover="changeMainImage('images/SeaofThieves.jpeg')" onmouseleave="resetMainImage()">
               </div>
-              <div class="bundle-info"><div><h3>50$</h3></div><div><a href=""><h3>GET NOW</h3></a></div></div>
             </div>
         </section>
     </section>
@@ -75,10 +74,7 @@
         <div class="nav_button left" onclick="moveSlide(-1)">
             <i class="fas fa-chevron-left"></i>
         </div>
-        <div class="nav_button right" onclick="moveSlide(1)">
-            <i class="fas fa-chevron-right"></i>
-        </div>
-        <div class="showcase_container">
+        <div class="nav_button right" onclick="moveSlide(1)">ù
             <!-- Your deal cards here -->
             <div class="deal_card">
                 <img src="pic6.jpg" alt="">
@@ -467,7 +463,7 @@ sliders.forEach(initializeSlider);
         mainImage.style.transition = 'opacity 0.3s ease-in-out'; // Apply smooth transition
         mainImage.style.opacity = 0;
         setTimeout(function() {
-            mainImage.src = 'images/Dragonslegacy.jpg'; // Change 'images/Dragonslegacy.jpg' to the original image source
+            mainImage.src = 'images/xbox.jpg'; // Change 'images/Dragonslegacy.jpg' to the original image source
             mainImage.style.opacity = 1;
         }, 300); // Adjust the duration of the transition as needed (in milliseconds)
       }
