@@ -65,35 +65,38 @@ function updateNavBar() {
         if (loggedInUser) {
             // User is logged in
             navMenu.innerHTML = `
-                <li><a href="#" onclick="handleLogout()">Logout</a></li>
-                <li>
-                    <div class="dropdown_menu">
-                        <button class="dropbtn">Language</button>
-                        <div class="dropdown_content">
-                            <a>English</a>
-                            <a>Francais</a>
-                            <a>Arabic</a>
-                        </div>
+            
+            <li><a href="Login.html">Log in</a></li>
+            <li><a href="Register.html">Register</a></li>
+            <li>
+                <div class="dropdown_menu">
+                    <button class="dropbtn">Language</button>
+                    <div class="dropdown_content">
+                        <a>English</a>
+                        <a>Francais</a>
+                        <a>Arabic</a>
                     </div>
-                </li>
-                <li><button type="button">Dark/Light</button></li>
+                </div>
+            </li>
+            <li><button id="modeToggle" type="button">Dark/Light</button></li>
             `;
         } else {
             // User is not logged in
             navMenu.innerHTML = `
-                <li><a href="Login.html">Log in</a></li>
-                <li><a href="Register.html">Register</a></li>
-                <li>
-                    <div class="dropdown_menu">
-                        <button class="dropbtn">Language</button>
-                        <div class="dropdown_content">
-                            <a>English</a>
-                            <a>Francais</a>
-                            <a>Arabic</a>
-                        </div>
+       
+            <li><a href="Login.html">Log in</a></li>
+            <li><a href="Register.html">Register</a></li>
+            <li>
+                <div class="dropdown_menu">
+                    <button class="dropbtn">Language</button>
+                    <div class="dropdown_content">
+                        <a>English</a>
+                        <a>Francais</a>
+                        <a>Arabic</a>
                     </div>
-                </li>
-                <li><button type="button">Dark/Light</button></li>
+                </div>
+            </li>
+            <li><button id="modeToggle" type="button">Dark/Light</button></li>
             `;
         }
     }
@@ -133,4 +136,62 @@ document.addEventListener('DOMContentLoaded', () => {
     if (signupForm) {
         signupForm.addEventListener('submit', handleSignup);
     }
+});
+
+
+const games = [
+    { name: 'Halo Infinite', url: 'Games-xbox.html' },
+    { name: 'Cyberpunk 2077', url: 'Games-pc.html' },
+    { name: 'The Last of Us Part II', url: 'Games-ps.html' },
+    { name: 'Animal Crossing', url: 'Games-nintendo.html' },
+    { name: 'The Witcher 3', url: 'Games-solo.html' },
+    { name: 'Among Us', url: 'Games-multi.html' },
+    { name: 'Doom Eternal', url: 'Games-action.html' },
+    { name: 'World of Warcraft', url: 'Games-MMORPG.html' },
+    // Add more games as needed
+];
+
+const searchBar = document.getElementById('searchBar');
+const searchResults = document.getElementById('searchResults');
+
+searchBar.addEventListener('input', function() {
+    const query = searchBar.value.toLowerCase();
+    searchResults.innerHTML = '';
+    
+    if (query) {
+        const filteredGames = games.filter(game => game.name.toLowerCase().includes(query));
+        filteredGames.forEach(game => {
+            const resultItem = document.createElement('a');
+            resultItem.href = game.url;
+            resultItem.textContent = game.name;
+            searchResults.appendChild(resultItem);
+        }); 
+        searchResults.style.display = 'block';
+    } else {
+        searchResults.style.display = 'none';
+    }
+});
+
+document.addEventListener('click', function(event) {
+    if (!searchResults.contains(event.target) && event.target !== searchBar) {
+        searchResults.style.display = 'none';
+    }
+});
+
+
+/*Dark/Light Mode */
+
+document.addEventListener('DOMContentLoaded', () => {
+    const toggleButton = document.getElementById('modeToggle');
+    const currentMode = localStorage.getItem('theme') || 'dark-mode';
+    document.documentElement.className = currentMode;
+
+    toggleButton.addEventListener('click', () => {
+        let newMode = 'dark-mode';
+        if (document.documentElement.classList.contains('dark-mode')) {
+            newMode = 'light-mode';
+        }
+        document.documentElement.className = newMode;
+        localStorage.setItem('theme', newMode);
+    });
 });

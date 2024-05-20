@@ -1,16 +1,46 @@
 :root{
-    --sec-purple: #e635f3;
-    --main-purple: #722a75;
-    --third-purple: #bc43c1;
-    --main-white: #d6d6d6;
-    --main-blue: #457bc1;
-    --sub-blue:#7eadea;
-    --main-dark:rgb(22,20,34);
-    --sub-dark: rgb(42, 38, 65);
-    --main-gray:rgb(96, 96, 97);
-    --sec-gray:rgb(159, 159, 165);
-    --rare-gold:rgb(234, 209, 47);
+    --secc-purple: #e635f3;
+    --mainn-purple: #722a75;
+    --thirdd-purple: #bc43c1;
+    --mainn-white: #d6d6d6;
+    --mainn-blue: #457bc1;
+    --subb-blue:#7eadea;
+    --mainn-dark:rgb(22,20,34);
+    --subb-dark: rgb(42, 38, 65);
+    --mainn-gray:rgb(96, 96, 97);
+    --secc-gray:rgb(159, 159, 165);
+    --raree-gold:rgb(234, 209, 47);
  }
+
+/* Dark mode colors */
+:root.dark-mode {
+    --sec-purple:var(--secc-purple);
+    --main-purple: var(--mainn-purple);
+    --third-purple: var(--thirdd-purple);
+    --main-white: var(--mainn-white);
+    --main-blue: var(--mainn-blue);
+    --sub-blue:var(--subb-blue);
+    --main-dark:var(--mainn-dark);
+    --sub-dark: var(--subb-dark);
+    --main-gray:var(--mainn-gray);
+    --sec-gray:var(--secc-gray);
+    --rare-gold:var(--raree-gold);
+}
+
+/* Light mode colors */
+:root.light-mode {
+    --sec-purple:var(--secc-purple);    
+    --main-purple: var(--secc-purple);
+    --third-purple: var(--mainn-purple);
+    --main-white: var(--mainn-dark);
+    --main-blue: var(--subb-blue);
+    --sub-blue:var(--mainn-blue);
+    --main-dark:rgb(228, 228, 228);
+    --sub-dark: var(--subb-dark);
+    --main-gray:var(--secc-gray);
+    --sec-gray:var(--mainn-gray);
+    --rare-gold:var(--raree-gold);
+}
 
  *{
     box-sizing: border-box;
@@ -246,6 +276,30 @@ section .sec_navbar ul {
     margin-bottom: auto;
     margin-right: 15px;
  }
+
+ .search-results {
+    display: none;
+    background-image: linear-gradient(135deg, var(--main-dark), var(--main-purple), var(--sec-purple));
+    transform: translateY(0); /* Slide in */
+    z-index: 5;
+    max-height: 200px;
+    overflow-y: auto;
+    position: absolute;
+    width: 11rem;   
+}
+
+.search-results a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: var(--main-white);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.search-results a:hover {
+    color: var(--sec-purple);
+    background-color: var(--main-purple);
+}
 
  section .sec_navbar .Search input{
     height: 2.5rem;
