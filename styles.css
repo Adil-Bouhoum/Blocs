@@ -1,3 +1,4 @@
+
 :root{
     --secc-purple: #e635f3;
     --mainn-purple: #722a75;
@@ -984,4 +985,64 @@ footer .links a{
 
 .sec-news div img:hover{
     transform: scale(1.08);
+}
+
+.product_details{
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 70vh;
+}
+.product_img_container{
+    width: 48%;
+    height: 70vh;
+    margin-right:1.1rem;
+}
+.product_img_container img{
+    width:100%;
+    height: 100% ;
+}
+
+.details{
+    width: 52%;
+    display: flex;
+    flex-direction: column;
+    margin-left: 1.1rem;
+    justify-content: center;
+    background-color: var(--main-dark);
+}
+
+.details div{
+    padding: 1rem;
+    font-size: 2rem;    
+}
+
+.details .details_header{
+
+    height: 10%;
+    background-color: var(--thirdd-purple);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.details .buy-button{
+    margin-left: auto;
+    margin-right: auto;
+    
+    background-color: var(--sub-dark);
+    color: var(--rare-gold);
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.buy-button:hover{
+    background-color: var(--rare-gold);
+    color: var(--main-dark);
 }

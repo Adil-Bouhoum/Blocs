@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blocs</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/883f670b89.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<header>
+    <div class="nav_bar">
+        <div class="nav_logo"><a href="index.html"><img src="Logo.png" alt="Logo"></a></div>
+        <div class="nav_menu">
+            <ul>
+                <!-- Nav menu will be dynamically updated -->
+            </ul>
+        </div>
+    </div>
+</header>
+<div class="reset_button"><a href="#element_1"><div><i class="fa-solid fa-arrow-up"></i></div></a></div>
+<section class="sec_2" id="element_1">
+    <div class="sec_navbar">
+        <ul>
+            <li>
+                <div class="sec_navbar_cat">
+                    <p>Categories</p>
+                    <div class="cat">
+                        <div class="cat_container">
+                            <div class="cat_container1">
+                                <a href="Games-xbox.html">Xbox Games</a>
+                                <a href="Games-pc.html">PC Games</a>
+                                <a href="Games-ps.html">PlayStation Games</a>
+                                <a href="Games-nintendo.html">Nintendo Games</a>
+                            </div>
+                            <div class="cat_container2">
+                                <a href="Games-solo.html">Singleplayer</a>
+                                <a href="Games-multi.html">Multiplayer</a>
+                                <a href="Games-action.html">Action</a>
+                                <a href="Games-MMORPG.html">MMORPG</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>    
+            </li>
+            <li><a href="Deals.html">Deals</a></li>
+            <li><a href="News.html">News</a></li>
+        </ul>
+        <div class="Search">
+            <input type="text" id="searchBar" placeholder="Search">
+            <div id="searchResults" class="search-results"></div>
+        </div>    
+    </div>
+</section>
+
+    <section class="packs-showcase">
+        <section class="container">
+            <div class="main_img">
+            <img id="mainImage" src="images/Dragonslegacy.jpg">
+            </div>
+            <div class="sec_container" onmouseleave="resetMainImage()">
+            <div class="title"><h2>DRAGON'    S LEGACY PACK</h2></div>
+            <div class="sub_img">
+                <img src="images/yakuza 0.jpg" onmouseover="changeMainImage('images/yakuza 0.jpg')" onmouseleave="resetMainImage()">
+                <img src="images/yakuza kiwami.jpg" onmouseover="changeMainImage('images/yakuza kiwami.jpg')" onmouseleave="resetMainImage()">
+                <img src="images/like a dragon.jpg" onmouseover="changeMainImage('images/like a dragon.jpg')" onmouseleave="resetMainImage()">
+                <img src="images/yakuza 5.jpg" onmouseover="changeMainImage('images/yakuza 5.jpg')" onmouseleave="resetMainImage()">
+            </div>
+            <div class="bundle-info"><div><h3>50$</h3></div><div><a href=""><h3>GET NOW</h3></a></div></div>
+            </div>
+        </section>
+    </section>
+
+
+    <section class="deals_showcase">
+        <h2>Hottest Deals</h2>
+        <div class="nav_button left" onclick="moveSlide(-1)">
+            <i class="fas fa-chevron-left"></i>
+        </div>
+        <div class="nav_button right" onclick="moveSlide(1)">
+            <i class="fas fa-chevron-right"></i>
+        </div>
+        <div class="showcase_container">
+            <!-- Your deal cards here -->
+            <div class="deal_card" onclick="redirectToProductPage('pic6.jpg', 'Action', '$70', '4.5', 'PC, PS5, Xbox Series X')">
+                <img src="pic6.jpg" alt="">
+                <div class="deal_card_details">
+                    <div class="deal_card_content">
+                        <div>Offer end in : 02/05/2024</div>
+                        <div class="prod-tag">
+                            <p class="prod-tag-promo">30%</p>
+                            <p class="prod-tag-price">100$->70$</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="deal_card" onclick="redirectToProductPage('images/elden.jpeg', 'RPG', '$70', '4.8', 'PC, PS4, PS5')">
+                <img src="images/elden.jpeg" alt="">
+                <div class="deal_card_details">
+                    <div class="deal_card_content">
+                        <div>Offer end in : 02/05/2024</div>
+                        <div class="prod-tag">
+                            <p class="prod-tag-promo">30%</p>
+                            <p class="prod-tag-price">100$->70$</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+
+    <footer>
+
+        <div><h3>Join the conversation</h3></div>
+        <div class="links">
+            <a href=""><i class="fa-brands fa-x-twitter"></i></a>
+            <a href=""><i class="fa-brands fa-facebook"></i></a>
+            <a href=""><i class="fa-brands fa-youtube"></i></a>
+            <a href=""><i class="fa-brands fa-linkedin"></i></a>
+            <a href=""><i class="fa-brands fa-twitch"></i></a>
+        </div>
+    
+    </footer>
+
+
+
+
+<script>
+function initializeSlider(container) {
+    let currentIndex = 0;
+    const slidesContainer = container.querySelector('.showcase_container');
+    const slides = container.querySelectorAll('.deal_card');
+
+    function moveSlide(direction) {
+        const cardWidth = slides[0].offsetWidth + 20; // Add margin-right
+        const containerWidth = slidesContainer.offsetWidth;
+        const maxIndex = Math.max(0, slides.length - Math.floor(containerWidth / cardWidth));
+
+        currentIndex = (currentIndex + direction) % (maxIndex + 1);
+        currentIndex = currentIndex < 0 ? maxIndex : currentIndex;
+
+        slidesContainer.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+    }
+
+    container.querySelector('.nav_button.left').addEventListener('click', function() {
+        moveSlide(-1);
+    });
+
+    container.querySelector('.nav_button.right').addEventListener('click', function() {
+        moveSlide(1);
+    });
+}
+
+// Initialize sliders
+const sliders = document.querySelectorAll('.deals_showcase');
+sliders.forEach(initializeSlider);
+</script>
+
+
+<script>
+    function changeMainImage(imageSrc) {
+        const mainImage = document.getElementById('mainImage');
+        mainImage.style.transition = 'opacity 0.3s ease-in-out'; // Apply smooth transition
+        mainImage.style.opacity = 0;
+        setTimeout(function() {
+            mainImage.src = imageSrc;
+            mainImage.style.opacity = 1;
+        }, 300); // Adjust the duration of the transition as needed (in milliseconds)
+    }
+    
+    function resetMainImage() {
+        const mainImage = document.getElementById('mainImage');
+        mainImage.style.transition = 'opacity 0.3s ease-in-out'; // Apply smooth transition
+        mainImage.style.opacity = 0;
+        setTimeout(function() {
+            mainImage.src = 'images/Dragonslegacy.jpg'; // Change 'images/Dragonslegacy.jpg' to the original image source
+            mainImage.style.opacity = 1;
+        }, 300); // Adjust the duration of the transition as needed (in milliseconds)
+    }
+
+    // Function to redirect to the product page with specific game details
+    function redirectToProductPage(imageSrc, genre, price, rating, platforms) {
+        // Create a URL for the product page with query parameters
+        var productPageUrl = 'product.html' + 
+            '?image=' + encodeURIComponent(imageSrc) +
+            '&genre=' + encodeURIComponent(genre) +
+            '&price=' + encodeURIComponent(price) +
+            '&rating=' + encodeURIComponent(rating) +
+            '&platforms=' + encodeURIComponent(platforms);
+        
+        // Redirect to the product page
+        window.location.href = productPageUrl;
+    }
+    </script>
+    <script src="index.js"></script>
+</body>
+</html>    

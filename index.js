@@ -66,8 +66,7 @@ function updateNavBar() {
             // User is logged in
             navMenu.innerHTML = `
             
-            <li><a href="Login.html">Log in</a></li>
-            <li><a href="Register.html">Register</a></li>
+            <li><a href="Login.html">Logout</a></li>
             <li>
                 <div class="dropdown_menu">
                     <button class="dropbtn">Language</button>
@@ -142,12 +141,12 @@ document.addEventListener('DOMContentLoaded', () => {
 const games = [
     { name: 'Halo Infinite', url: 'Games-xbox.html' },
     { name: 'Cyberpunk 2077', url: 'Games-pc.html' },
-    { name: 'The Last of Us Part II', url: 'Games-ps.html' },
+    { name: 'Dark souls 3', url: 'Games-ps.html' },
     { name: 'Animal Crossing', url: 'Games-nintendo.html' },
     { name: 'The Witcher 3', url: 'Games-solo.html' },
-    { name: 'Among Us', url: 'Games-multi.html' },
-    { name: 'Doom Eternal', url: 'Games-action.html' },
-    { name: 'World of Warcraft', url: 'Games-MMORPG.html' },
+    { name: 'Final fantasy 16', url: 'Games-multi.html' },
+    { name: 'League of legends', url: 'Games-action.html' },
+    { name: 'Darkest Dungeons', url: 'Games-MMORPG.html' },
     // Add more games as needed
 ];
 
