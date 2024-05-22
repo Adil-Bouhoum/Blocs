@@ -32,6 +32,13 @@ function handleSignup(event) {
     const username = document.getElementById('signup-username').value;
     const email = document.getElementById('signup-email').value;
     const password = document.getElementById('signup-password').value;
+    const confirmPassword = document.getElementById('signup-confirmpass').value;
+
+    // Check if password and confirm password match
+    if (password !== confirmPassword) {
+        alert("Passwords do not match!");
+        return; // Stop the signup process
+    }
 
     // Check if email is already registered
     const userExists = registeredUsers.some(user => user.email === email);
@@ -56,6 +63,9 @@ function handleLogout() {
     alert("Logged out successfully!");
     window.location.href = 'Login.html'; // Redirect to index.html
 }
+
+
+//Show password Code
 
 // Function to update the navigation bar based on login status
 function updateNavBar() {

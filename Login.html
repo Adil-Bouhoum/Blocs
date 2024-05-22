@@ -60,10 +60,14 @@
                         <span class="icon"><i class='bx bxs-lock-alt'></i></span>
                         <input type="password" id="login-password" required>
                         <label>Password</label>
+                        
                     </div>
                     <div class="remember-password">
                         <label><input type="checkbox">Remember Me</label>
                         <a href="#">Forget Password</a>
+                    </div>
+                    <div class="remember-password">
+                        <label><input type="checkbox" id="show-password-login"> Show Password</label>
                     </div>
                     <button class="btn" type="submit">Login In</button>
                     <div class="create-account">
@@ -89,8 +93,17 @@
                         <input type="password" id="signup-password" required>
                         <label>Password</label>
                     </div>
+                    <div class="input-box">
+                        <span class="icon"><i class='bx bxs-lock-alt'></i></span>
+                        <input type="password" id="signup-confirmpass" required>
+                        <label>Confirm Password</label>
+                    </div>
+                    
                     <div class="remember-password">
                         <label><input type="checkbox">I agree with this statement</label>
+                    </div>
+                    <div class="remember-password">
+                        <label>  <input type="checkbox" id="show-password-signup"> Show Password   </label>
                     </div>
                     <button class="btn" type="submit">Sign Up</button>
                     <div class="create-account">
@@ -101,5 +114,27 @@
         </div>
     </div>
     <script src="index.js"></script>
+    <script>
+        document.getElementById('show-password-login').addEventListener('change', function() {
+    const loginPassword = document.getElementById('login-password');
+    if (this.checked) {
+        loginPassword.type = 'text';
+    } else {
+        loginPassword.type = 'password';
+    }
+});
+
+document.getElementById('show-password-signup').addEventListener('change', function() {
+    const signupPassword = document.getElementById('signup-password');
+    const confirmPassword = document.getElementById('signup-confirmpass');
+    if (this.checked) {
+        signupPassword.type = 'text';
+        confirmPassword.type = 'text';
+    } else {
+        signupPassword.type = 'password';
+        confirmPassword.type = 'password';
+    }
+});
+    </script>
 </body>
 </html>
