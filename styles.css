@@ -457,11 +457,15 @@ section .sec_navbar ul {
 .product-4 div img{
     width: 100%;
     height: 180px;
+    transition: 0.4s;
+    cursor: pointer;
 }
 
 .product-3 div img{
     width: 100%;
     height: 225px;
+    transition: 0.4s;
+    cursor: pointer;
 }
 
 
